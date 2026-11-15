@@ -1,0 +1,392 @@
+/* ========================================
+   CONFIGURAÇÕES GERAIS
+======================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0d1117;
+  color: #e6edf3;
+  font-family: Arial, sans-serif;
+}
+
+/* ========================================
+   CABEÇALHO E NAVEGAÇÃO
+======================================== */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 10%;
+  border-bottom: 1px solid #21262d;
+}
+
+header h2 {
+  font-size: 22px;
+  color: #ffffff;
+}
+
+header h2 span {
+  color: #a78bfa;
+}
+
+nav {
+  display: flex;
+  gap: 30px;
+}
+
+nav a {
+  color: #c9d1d9;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #a78bfa;
+}
+
+/* ========================================
+   SEÇÃO INICIAL
+======================================== */
+
+#inicio {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 80px 10%;
+}
+
+/* Brilho roxo no fundo */
+
+#inicio::before {
+  content: "";
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle,
+      rgba(139, 92, 246, 0.18),
+      transparent 70%);
+  top: 10%;
+  right: 5%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Texto inicial */
+
+#inicio p:first-child {
+  color: #a78bfa;
+  letter-spacing: 3px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+#inicio h1 {
+  font-size: clamp(38px, 6vw, 64px);
+  max-width: 750px;
+  margin-bottom: 20px;
+}
+
+#inicio h1 span {
+  color: #a78bfa;
+}
+
+#inicio p:not(:first-child) {
+  color: #9ca3af;
+  font-size: 18px;
+  line-height: 1.7;
+  max-width: 550px;
+  margin-bottom: 30px;
+}
+
+#inicio a {
+  display: inline-block;
+  background-color: #8b5cf6;
+  color: white;
+  padding: 14px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+#inicio a:hover {
+  background-color: #7c3aed;
+  transform: translateY(-3px);
+}
+
+/* ========================================
+   ANIMAÇÃO DA SEÇÃO INICIAL
+======================================== */
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#inicio h1,
+#inicio p,
+#inicio a {
+  animation: aparecer 0.8s ease both;
+}
+
+#inicio h1 {
+  animation-delay: 0.15s;
+}
+
+#inicio p {
+  animation-delay: 0.3s;
+}
+
+#inicio a {
+  animation-delay: 0.45s;
+}
+
+/* ========================================
+   DEMAIS SEÇÕES
+======================================== */
+
+#sobre,
+#projetos,
+#skills,
+#videos,
+#apresentacoes,
+#contato {
+  padding: 80px 10%;
+  border-top: 1px solid #21262d;
+}
+
+/* Títulos */
+
+#sobre h2,
+#projetos h2,
+#skills h2,
+#videos h2,
+#apresentacoes h2,
+#contato h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #a78bfa;
+}
+
+/* Texto da seção Sobre */
+
+#sobre p {
+  max-width: 850px;
+  font-size: 18px;
+  line-height: 1.9;
+  color: #9ca3af;
+  margin-bottom: 15px;
+}
+
+/* Descrições das seções */
+
+.descricao {
+  color: #9ca3af;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+/* ========================================
+   CARTÕES DOS PROJETOS, VÍDEOS E SKILLS
+======================================== */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,
+      minmax(min(100%, 260px), 1fr));
+  gap: 20px;
+  width: 100%;
+  margin-top: 0;
+}
+
+.card {
+  min-width: 0;
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  padding: 25px;
+  transition: transform 0.3s, border-color 0.3s,
+    box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: #8b5cf6;
+  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.12);
+}
+
+.card h3 {
+  margin: 18px 0 12px;
+  color: #ffffff;
+  font-size: 21px;
+  overflow-wrap: break-word;
+}
+
+.card p {
+  color: #9ca3af;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Tags dos cartões */
+
+.tag {
+  display: inline-block;
+  color: #c4b5fd;
+  background-color: #2e2250;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+/* Links dos cartões */
+
+.card a {
+  display: inline-block;
+  color: #ffffff;
+  background-color: #8b5cf6;
+  padding: 9px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.card a:hover {
+  background-color: #7c3aed;
+  transform: translateY(-2px);
+}
+
+.link-futuro {
+  display: inline-block;
+  color: #a78bfa;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* ========================================
+   RODAPÉ E CONTATO
+======================================== */
+
+footer {
+  text-align: center;
+  padding: 60px 10% 20px;
+  border-top: 1px solid #21262d;
+  background-color: #090d13;
+}
+
+footer h2 {
+  color: #a78bfa;
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+footer>p {
+  color: #9ca3af;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+.contatos {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 45px;
+}
+
+.contatos a {
+  color: white;
+  background-color: #8b5cf6;
+  padding: 10px 20px;
+  border-radius: 7px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.contatos a:hover {
+  background-color: #7c3aed;
+  transform: translateY(-3px);
+}
+
+.footer-bottom {
+  border-top: 1px solid #21262d;
+  padding-top: 20px;
+}
+
+.footer-bottom p {
+  color: #6b7280;
+  font-size: 13px;
+}
+
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  nav {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  #inicio {
+    padding: 70px 7%;
+  }
+
+  #inicio::before {
+    width: 300px;
+    height: 300px;
+    right: -20%;
+  }
+
+  #sobre,
+  #projetos,
+  #skills,
+  #videos,
+  #apresentacoes,
+  #contato {
+    padding: 60px 7%;
+  }
+
+  .contatos {
+    flex-wrap: wrap;
+  }
+}
+
+/* ========================================
+   ACESSIBILIDADE: REDUÇÃO DE MOVIMENTO
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
