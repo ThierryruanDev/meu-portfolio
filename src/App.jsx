@@ -141,6 +141,9 @@ function App() {
             {projetosConsole.map((projeto) => (
               <article className="card" key={projeto.titulo}>
                 <span className="tag">C# / .NET</span>
+                {' '}
+                <span className="tag">POO</span>
+
                 <h3>{projeto.titulo}</h3>
                 <p>{projeto.texto}</p>
 
@@ -175,7 +178,10 @@ function App() {
             <article className="card">
               <span className="tag">Frameworks e bibliotecas</span>
               <h3>Desenvolvimento</h3>
-              <p>.NET, React e ASP.NET Core (próximo aprendizado).</p>
+              <p>
+                .NET, React, Entity Framework Core (em aprendizado) e ASP.NET Core (próximo aprendizado).
+                
+              </p>
             </article>
 
             <article className="card">
@@ -252,7 +258,7 @@ function App() {
       </main>
 
       <footer id="contato">
-        <h2>Vamos conversar?</h2>
+        <h2>Entre em contato</h2>
 
         <p>
           Estou aberto a conhecer pessoas e compartilhar ideias

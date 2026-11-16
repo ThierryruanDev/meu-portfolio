@@ -32,7 +32,7 @@ header h2 {
 }
 
 header h2 span {
-  color: #a78bfa;
+  color: #38bdf8;
 }
 
 nav {
@@ -47,7 +47,7 @@ nav a {
 }
 
 nav a:hover {
-  color: #a78bfa;
+  color: #38bdf8;
 }
 
 /* ========================================
@@ -67,7 +67,7 @@ nav a:hover {
   padding: 80px 10%;
 }
 
-/* Brilho roxo no fundo */
+/* Brilho azul no fundo */
 
 #inicio::before {
   content: "";
@@ -75,7 +75,7 @@ nav a:hover {
   width: 450px;
   height: 450px;
   background: radial-gradient(circle,
-      rgba(139, 92, 246, 0.18),
+      rgba(56, 189, 248, 0.18),
       transparent 70%);
   top: 10%;
   right: 5%;
@@ -86,7 +86,7 @@ nav a:hover {
 /* Texto inicial */
 
 #inicio p:first-child {
-  color: #a78bfa;
+  color: #38bdf8;
   letter-spacing: 3px;
   font-size: 14px;
   margin-bottom: 20px;
@@ -99,7 +99,7 @@ nav a:hover {
 }
 
 #inicio h1 span {
-  color: #a78bfa;
+  color: #38bdf8;
 }
 
 #inicio p:not(:first-child) {
@@ -112,7 +112,7 @@ nav a:hover {
 
 #inicio a {
   display: inline-block;
-  background-color: #8b5cf6;
+  background-color: #0284c7;
   color: white;
   padding: 14px 25px;
   border-radius: 8px;
@@ -121,7 +121,7 @@ nav a:hover {
 }
 
 #inicio a:hover {
-  background-color: #7c3aed;
+  background-color: #0369a1;
   transform: translateY(-3px);
 }
 
@@ -183,7 +183,7 @@ nav a:hover {
 #contato h2 {
   font-size: 32px;
   margin-bottom: 20px;
-  color: #a78bfa;
+  color: #38bdf8;
 }
 
 /* Texto da seção Sobre */
@@ -214,7 +214,7 @@ nav a:hover {
       minmax(min(100%, 260px), 1fr));
   gap: 20px;
   width: 100%;
-  margin-top: 30;
+  margin-top: 30px;
 }
 
 .card {
@@ -229,8 +229,8 @@ nav a:hover {
 
 .card:hover {
   transform: translateY(-5px);
-  border-color: #8b5cf6;
-  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.12);
+  border-color: #38bdf8;
+  box-shadow: 0 8px 25px rgba(56, 189, 248, 0.12);
 }
 
 .card h3 {
@@ -250,8 +250,8 @@ nav a:hover {
 
 .tag {
   display: inline-block;
-  color: #c4b5fd;
-  background-color: #2e2250;
+  color: #bae6fd;
+  background-color: #0c2d42;
   padding: 6px 12px;
   border-radius: 20px;
   font-size: 12px;
@@ -262,7 +262,7 @@ nav a:hover {
 .card a {
   display: inline-block;
   color: #ffffff;
-  background-color: #8b5cf6;
+  background-color: #0284c7;
   padding: 9px 16px;
   border-radius: 6px;
   text-decoration: none;
@@ -270,13 +270,13 @@ nav a:hover {
 }
 
 .card a:hover {
-  background-color: #7c3aed;
+  background-color: #0369a1;
   transform: translateY(-2px);
 }
 
 .link-futuro {
   display: inline-block;
-  color: #a78bfa;
+  color: #38bdf8;
   font-size: 14px;
   line-height: 1.5;
 }
@@ -286,48 +286,56 @@ nav a:hover {
 ======================================== */
 
 footer {
-  text-align: center;
+  text-align: left;
   padding: 60px 10% 20px;
   border-top: 1px solid #21262d;
   background-color: #090d13;
 }
 
 footer h2 {
-  color: #a78bfa;
+  color: #38bdf8;
   font-size: 28px;
-  margin-bottom: 15px;
+  margin-bottom: 18px;
 }
 
 footer>p {
   color: #9ca3af;
   line-height: 1.7;
   margin-bottom: 25px;
+  max-width: 600px;
 }
+
+/* Links de contato */
 
 .contatos {
   display: flex;
-  justify-content: center;
-  gap: 15px;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
   margin-bottom: 45px;
 }
 
 .contatos a {
+  display: inline-block;
+  width: fit-content;
   color: white;
-  background-color: #8b5cf6;
-  padding: 10px 20px;
+  background-color: #0284c7;
+  padding: 10px 18px;
   border-radius: 7px;
   text-decoration: none;
   transition: 0.3s;
 }
 
 .contatos a:hover {
-  background-color: #7c3aed;
+  background-color: #0369a1;
   transform: translateY(-3px);
 }
 
 .footer-bottom {
   border-top: 1px solid #21262d;
   padding-top: 20px;
+  text-align: center;
 }
 
 .footer-bottom p {
@@ -372,6 +380,7 @@ footer>p {
 
   .contatos {
     flex-wrap: wrap;
+    gap: 12px;
   }
 }
 
@@ -390,6 +399,8 @@ footer>p {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Espaçamento dos títulos de vídeos e apresentações */
 
 #videos h2,
 #apresentacoes h2 {
