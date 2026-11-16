@@ -5,9 +5,9 @@ import './App.css'
 const BASE = import.meta.env.BASE_URL
 
 // Links dos repositórios
-const GITHUB_BIBLIOTECA = 'https://github.com/ThierryruanDev'
-const GITHUB_TAREFAS = 'https://github.com/ThierryruanDev'
-const GITHUB_BANCARIO = 'https://github.com/ThierryruanDev'
+const GITHUB_BIBLIOTECA = 'https://github.com/ThierryruanDev/Sistema_Biblioteca/'
+const GITHUB_TAREFAS = 'https://github.com/ThierryruanDev/Sistema_de_tarefas/'
+const GITHUB_BANCARIO = 'https://github.com/ThierryruanDev/Sistema_Bancario/'
 
 // Links do Google Drive
 const LINK_VIDEO =
