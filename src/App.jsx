@@ -1,6 +1,66 @@
 
 import './App.css'
 
+// Caminho base automático para localhost e GitHub Pages
+const BASE = import.meta.env.BASE_URL
+
+// Links dos repositórios
+const GITHUB_BIBLIOTECA = 'https://github.com/ThierryruanDev'
+const GITHUB_TAREFAS = 'https://github.com/ThierryruanDev'
+const GITHUB_BANCARIO = 'https://github.com/ThierryruanDev'
+
+// Links do Google Drive
+const LINK_VIDEO =
+  'https://drive.google.com/file/d/1YsX-PNQpyB9jIFK7L3Cj1IXjwQ66sbc2/view?usp=drivesdk'
+
+const LINK_APRESENTACAO_IA = 'https://docs.google.com/presentation/d/1hWBpEMxuN0DopQDyEC0Ev4TSic_fJSpL/edit?usp=drivesdk&ouid=112539444205735712294&rtpof=true&sd=true'
+const LINK_APRESENTACAO_CIBERSEGURANCA = 'https://docs.google.com/presentation/d/1gGfVbYfTn2yHCWVXES0ixLk9czyKJLfM/edit?usp=drivesdk&ouid=112539444205735712294&rtpof=true&sd=true'
+
+const projetosConsole = [
+  {
+    titulo: 'Sistema de Biblioteca',
+    texto: 'Sistema desenvolvido para simular o gerenciamento e a organização de livros.',
+    link: GITHUB_BIBLIOTECA,
+  },
+  {
+    titulo: 'Sistema de Tarefas',
+    texto: 'Aplicação voltada à organização e ao gerenciamento de tarefas.',
+    link: GITHUB_TAREFAS,
+  },
+  {
+    titulo: 'Sistema Bancário',
+    texto: 'Sistema que simula operações bancárias, utilizando conceitos de lógica de programação.',
+    link: GITHUB_BANCARIO,
+  },
+]
+
+const videos = [
+  {
+    tag: 'Inteligência Artificial',
+    titulo: 'Apresentação do Gemini Notebook (antigo NotebookLM)',
+    texto:
+      'Trecho da apresentação “Evolução da Inteligência Artificial”, em que apresento a ferramenta de IA do Google.',
+    link: LINK_VIDEO,
+  },
+]
+
+const apresentacoes = [
+  {
+    tag: 'Inteligência Artificial',
+    titulo: 'Evolução da Inteligência Artificial',
+    texto:
+      'Apresentação em grupo sobre a história da inteligência artificial, desde os primeiros estudos nos anos 1950.',
+    link: LINK_APRESENTACAO_IA,
+  },
+  {
+    tag: 'Cibersegurança',
+    titulo: 'Segurança digital e golpes na internet',
+    texto:
+      'Apresentação em grupo sobre cibersegurança: malwares, phishing, engenharia social e boas práticas de proteção.',
+    link: LINK_APRESENTACAO_CIBERSEGURANCA,
+  },
+]
+
 function App() {
   return (
     <>
@@ -36,6 +96,7 @@ function App() {
 
         <section id="sobre">
           <h2>Sobre mim</h2>
+
           <p>
             Sou estudante de Análise e Desenvolvimento de Sistemas e tenho interesse em desenvolvimento de software e tecnologias web.
           </p>
@@ -45,12 +106,10 @@ function App() {
           </p>
 
           <p>
-            Gosto de aprender coisas novas, desenvolver projetos e transformar meus conhecimentos em aplicações práticas.  
+            Gosto de aprender coisas novas, desenvolver projetos e transformar meus conhecimentos em aplicações práticas.
           </p>
-          
         </section>
 
-        
         <section id="projetos">
           <h2>Meus projetos</h2>
 
@@ -71,7 +130,7 @@ function App() {
               </p>
 
               <a
-                href="/projetos/verificador-de-senhas/index.html"
+                href={`${BASE}projetos/verificador-de-senhas/index.html`}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -79,46 +138,25 @@ function App() {
               </a>
             </article>
 
-            <article className="card">
-              <span className="tag">C# / .NET</span>
-              <h3>Sistema de Biblioteca</h3>
-              <p>
-                Sistema desenvolvido para simular o gerenciamento
-                e a organização de livros.
-              </p>
-              <span className="link-futuro">
-                Projeto em modo console — sem interface gráfica.
-              </span>
-            </article>
+            {projetosConsole.map((projeto) => (
+              <article className="card" key={projeto.titulo}>
+                <span className="tag">C# / .NET</span>
+                <h3>{projeto.titulo}</h3>
+                <p>{projeto.texto}</p>
 
-            <article className="card">
-              <span className="tag">C# / .NET</span>
-              <h3>Sistema de Tarefas</h3>
-              <p>
-                Aplicação voltada à organização e ao
-                gerenciamento de tarefas.
-              </p>
-              <span className="link-futuro">
-                Projeto em modo console — sem interface gráfica.
-              </span>
-            </article>
+                <p className="nota">
+                  Projeto em modo console, sem interface gráfica.
+                  O código está no GitHub.
+                </p>
 
-            <article className="card">
-              <span className="tag">C# / .NET</span>
-              <h3>Sistema Bancário</h3>
-              <p>
-                Sistema que simula operações bancárias,
-                utilizando conceitos de lógica de programação.
-              </p>
-              <span className="link-futuro">
-                Projeto em modo console — sem interface gráfica.
-              </span>
-            </article>
-
+                <a href={projeto.link} target="_blank" rel="noreferrer">
+                  Ver código no GitHub
+                </a>
+              </article>
+            ))}
           </div>
         </section>
-        
-        
+
         <section id="skills">
           <h2>Tecnologias e conhecimentos</h2>
 
@@ -139,7 +177,7 @@ function App() {
               <h3>Desenvolvimento</h3>
               <p>.NET, React e ASP.NET Core (próximo aprendizado).</p>
             </article>
- 
+
             <article className="card">
               <span className="tag">Banco de dados</span>
               <h3>SQL Server</h3>
@@ -159,58 +197,56 @@ function App() {
             </article>
           </div>
         </section>
-       
-        
+
         <section id="videos">
           <h2>Vídeos</h2>
 
-          <p className="descricao">
-            Vídeos e demonstrações dos meus trabalhos.
-          </p>
-
           <div className="cards">
-            <article className="card">
-              <span className="tag">Demonstração</span>
+            {videos.map((video) => (
+              <article className="card" key={video.titulo}>
+                <span className="tag">{video.tag}</span>
+                <h3>{video.titulo}</h3>
+                <p>{video.texto}</p>
 
-              <h3>Apresentação do Portfólio</h3>
-
-              <p>
-                Vídeo demonstrativo apresentando o funcionamento
-                do site, suas seções e os projetos desenvolvidos.
-              </p>
-
-              <span className="link-futuro">
-                Vídeo será disponibilizado em breve.
-              </span>
-            </article>
+                {video.link && (
+                  <div className="acoes">
+                    <a
+                      href={video.link}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Assistir ao vídeo
+                    </a>
+                  </div>
+                )}
+              </article>
+            ))}
           </div>
         </section>
 
-        
         <section id="apresentacoes">
           <h2>Apresentações</h2>
 
-          <p className="descricao">
-            Materiais e apresentações desenvolvidos durante
-            minha jornada acadêmica.
-          </p>
-
           <div className="cards">
-            <article className="card">
-              <span className="tag">Materiais acadêmicos</span>
+            {apresentacoes.map((item) => (
+              <article className="card" key={item.titulo}>
+                <span className="tag">{item.tag}</span>
+                <h3>{item.titulo}</h3>
+                <p>{item.texto}</p>
 
-              <h3>Apresentações e trabalhos</h3>
-
-              <p>
-                Espaço destinado à divulgação de apresentações,
-                documentos e materiais produzidos durante
-                minha formação acadêmica.
-              </p>
-
-              <span className="link-futuro">
-                Materiais serão adicionados em breve.
-              </span>
-            </article>
+                {item.link && (
+                  <div className="acoes">
+                    <a
+                      href={item.link}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Ver apresentação
+                    </a>
+                  </div>
+                )}
+              </article>
+            ))}
           </div>
         </section>
       </main>

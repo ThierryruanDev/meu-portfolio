@@ -214,7 +214,7 @@ nav a:hover {
       minmax(min(100%, 260px), 1fr));
   gap: 20px;
   width: 100%;
-  margin-top: 0;
+  margin-top: 30;
 }
 
 .card {
@@ -389,4 +389,9 @@ footer>p {
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+#videos h2,
+#apresentacoes h2 {
+  margin-bottom: 50px !important;
 }
